@@ -1,11 +1,16 @@
 <template>
-  <div class=" flex flex-row justify-between items-center mr-10 font-Poppins">
-    <Headerbar />
-  </div>
-  <hr>
-  <div>
-    <CityInput @weatherData="handleWeatherData"/>
-    <WeatherResult :weatherData="weatherData" />
+  <div class="flex justify-center items-center flex-col h-screen font-Poppins gap-10">
+    <div class=" size-2/4  rounded-lg shadow-lg p-4">
+      <div class=" flex flex-row  mr-10  justify-between">
+        <Headerbar />
+        <CityInput @weatherData="handleWeatherData" />
+      </div>
+      <hr>
+      <div class="flex flex-col items-center justify-center">
+        <WeatherResult :weatherData="weatherData" />
+      </div>
+    </div>
+    <footer class=" opacity-30">cycle Méteo app 2025</footer>
   </div>
 </template>
 
@@ -23,11 +28,9 @@ export default {
   },
   setup() {
     const weatherData = ref(null);
-    const weatherApiResults = ref(null);
-
     const handleWeatherData = (data) => {
-        weatherData.value = data;
-      }
+      weatherData.value = data;
+    }
 
     return {
       weatherData,
@@ -36,4 +39,3 @@ export default {
   }
 }
 </script>
-

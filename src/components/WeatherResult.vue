@@ -1,26 +1,20 @@
 <template>
-    <div>
-        <div v-if="weatherApiResults">
-            <h3>Résultats de la recherche:</h3>
-            <ul>
-                <li v-for="result in weatherApiResults" :key="result.id">
-                    {{ result.name }}, {{ result.region }}, {{ result.country }}
-                </li>
-            </ul>
+    <div class="flex flex-col gap-20 justify-center items-center font-Poppins">
+        <div
+        class="flex flex-col items-center justify-center pt-12"
+        v-if="weatherData">
+            <h2 class=" text-3xl font-bold">{{ weatherData.name }}</h2>
+            <p>{{ weatherData.country }}</p>
+            <p class=" text-2xl"> {{ weatherData.current.temp_c }}°C</p>
+            <img class="pt-5" :src="weatherData.current.condition.icon" alt="icon méteo">
+            <p>{{ weatherData.current.condition.text }} </p>
         </div>
-        <div v-if="weatherData">
-            <h3>Détails météorologiques:</h3>
-            <p><strong>Ville:</strong> {{ weatherData.name }}</p>
-            <p><strong>Pays:</strong> {{ weatherData.country }}</p>
-            <p><strong>Region:</strong> {{ weatherData.region }}</p>
-            <p><strong>Temperature:</strong> {{ weatherData.current.temp_c }}°C</p>
-            <p><strong>Temps:</strong> {{ weatherData.current.condition.text }}</p>
-            <p><strong>Humidité:</strong> {{ weatherData.current.humidity }}%</p>
-            <p><strong>Vitesse de vent :</strong> {{ weatherData.current.wind_kph }} km/h</p>
-        </div>
-        <div v-if="!weatherApiResults && !weatherData">
-            <p>Pas d'information météo.</p>
-        </div>
+    </div>
+
+    <div
+    class=" text-slate-300 pt-40" 
+    v-if="!weatherApiResults && !weatherData">
+        <p>Pas d'information météo.</p>
     </div>
 </template>
 
