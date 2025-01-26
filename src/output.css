@@ -633,6 +633,10 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -676,6 +680,10 @@ video {
 .bg-white-pastel {
   --tw-bg-opacity: 1;
   background-color: rgb(240 245 245 / var(--tw-bg-opacity, 1));
+}
+
+.bg-main {
+  background-image: url('./src/assets/images/mountain.jpg');
 }
 
 .p-2 {
@@ -762,6 +770,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[18px_20px_207px_27px_rgba\(220\2c _164\2c _59\2c _0\.2\)\] {
+  --tw-shadow: 18px 20px 207px 27px rgba(220, 164, 59, 0.2);
+  --tw-shadow-colored: 18px 20px 207px 27px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -799,4 +813,10 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
 }

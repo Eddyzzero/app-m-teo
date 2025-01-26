@@ -1,10 +1,14 @@
 <template>
-    <div class="flex flex-col justify-center">
+    <div class="flex flex-col justify-center flex-wrap">
         <div class="flex flex-row font-Poppins justify-start items-center bg-white-pastel rounded-md my-3 w-96">
             <img class=" size-6 ml-2" src="../assets/icons/SVG/Depth 7, Frame 0.png" alt="icon">
             <input
                 class=" p-2 w-full rounded-md bg-white-pastel focus:outline-none text-green-pastel placeholder:text-green-pastel placeholder:text-opacity-50"
-                type="text" placeholder="Ville" @input="getSearchResults" v-model="searchQuery">
+                type="text"
+                placeholder="Ville" 
+                @input="getSearchResults" 
+                v-model="searchQuery"
+                required>
         </div>
         <section class="relative">
             <ul class=" bg-white-pastel text-green-pastel rounded-xl  shadow-sm py-2 px-1  absolute top-0 left-0 w-full z-10 transition-all"
@@ -72,3 +76,5 @@ const selectCity = async (city) => {
 import { ref } from "vue";
 const textInputValue = ref();
 </script> -->
+
+

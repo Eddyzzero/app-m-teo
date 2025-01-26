@@ -5,7 +5,7 @@ export default {
     extend: {
 
       backgroundImage: {
-        main: "url('/src/assets/images/mountain.jpg')",
+        main: "url('./src/assets/images/mountain.jpg')",
       },
       colors: {
         'green-pastel': '#638785',

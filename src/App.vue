@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center items-center flex-col h-screen font-Poppins gap-10">
+  <div class="flex justify-center items-center flex-col h-screen font-Poppins gap-10 bg-main">
     <div class=" size-2/4  rounded-lg shadow-lg p-4">
-      <div class=" flex flex-row  mr-10  justify-between">
+      <div class=" flex flex-row justify-between mr-10 sm:flex-wrap  ">
         <Headerbar />
         <CityInput @weatherData="handleWeatherData" />
       </div>
@@ -19,6 +19,7 @@ import { ref } from 'vue';
 import CityInput from './components/CityInput.vue';
 import Headerbar from './components/HeaderBar.vue';
 import WeatherResult from './components/WeatherResult.vue';
+
 export default {
   name: "App",
   components: {
